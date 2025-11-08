@@ -598,28 +598,34 @@ body {
 
 .download-status {
     display: inline-block;
-    background: rgba(76, 175, 80, 0.3);
-    color: #4caf50;
-    padding: 10px 25px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 12px 30px;
     border-radius: 25px;
     margin: 20px 0;
     font-weight: 700;
-    font-size: 1.05em;
-    border: 2px solid rgba(76, 175, 80, 0.5);
-    animation: pulse 2s ease-in-out infinite;
+    font-size: 1.1em;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    min-width: 180px;
+    text-align: center;
+    backdrop-filter: blur(10px);
 }
 
 .download-status.available {
-    background: rgba(76, 175, 80, 0.2);
-    color: #4caf50;
-    border-color: rgba(76, 175, 80, 0.6);
-    box-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
+    background: rgba(76, 175, 80, 0.4);
+    color: #fff;
+    border-color: rgba(76, 175, 80, 0.8);
+    box-shadow: 0 0 25px rgba(76, 175, 80, 0.4);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: pulse 2s ease-in-out infinite;
 }
 
 .download-status.coming {
-    background: rgba(255, 152, 0, 0.2);
-    color: #ff9800;
-    border-color: rgba(255, 152, 0, 0.6);
+    background: rgba(255, 152, 0, 0.4);
+    color: #fff;
+    border-color: rgba(255, 152, 0, 0.8);
+    box-shadow: 0 0 25px rgba(255, 152, 0, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     animation: none;
 }
 
