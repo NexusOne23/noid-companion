@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "NoID Privacy Companion",
   "short_name": "NoID Privacy",
   "description": "Learn about Windows 11 privacy hardening and discover NoID Privacy - the professional security tool",
@@ -21,7 +21,11 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["utilities", "security", "productivity"],
+  "categories": [
+    "utilities",
+    "security",
+    "productivity"
+  ],
   "screenshots": [
     {
       "src": "home.png",
