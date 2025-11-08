@@ -37,5 +37,26 @@
       "purpose": "maskable"
     }
   ],
-  "categories": ["utilities", "security", "productivity"]
+  "categories": ["utilities", "security", "productivity"],
+  "shortcuts": [
+    {
+      "name": "Privacy Checker",
+      "short_name": "Checker",
+      "description": "Check your privacy score",
+      "url": "/?page=checker",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "scope_extensions": [],
+  "display_override": ["standalone", "minimal-ui"],
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
 }
