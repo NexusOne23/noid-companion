@@ -1,13 +1,13 @@
 // Service Worker for PWA
-const CACHE_NAME = 'noid-privacy-v1.0.0';
+const CACHE_NAME = 'noid-privacy-v1.0.1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/app.js',
-  '/manifest.json',
-  '/icon-192.png',
-  '/icon-512.png'
+  './',
+  './index.html',
+  './styles.css',
+  './app.js',
+  './manifest.json',
+  './icon-192.png',
+  './icon-512.png'
 ];
 
 // Install event - force immediate activation

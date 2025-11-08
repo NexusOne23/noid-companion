@@ -1,4 +1,5 @@
 {
+  "id": "/",
   "name": "NoID Privacy Companion",
   "short_name": "NoID Privacy",
   "description": "Learn about Windows 11 privacy hardening and discover NoID Privacy - the professional security tool",
@@ -36,31 +37,5 @@
       "purpose": "maskable"
     }
   ],
-  "categories": ["utilities", "security", "productivity"],
-  "screenshots": [
-    {
-      "src": "home.png",
-      "sizes": "1024x576",
-      "type": "image/png",
-      "label": "Home Screen"
-    },
-    {
-      "src": "features.png",
-      "sizes": "1024x576",
-      "type": "image/png",
-      "label": "Features"
-    },
-    {
-      "src": "checker.png",
-      "sizes": "1024x576",
-      "type": "image/png",
-      "label": "Privacy Checker"
-    },
-    {
-      "src": "download.png",
-      "sizes": "1024x576",
-      "type": "image/png",
-      "label": "Download Options"
-    }
-  ]
+  "categories": ["utilities", "security", "productivity"]
 }
