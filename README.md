@@ -1,252 +1,103 @@
-# NoID Privacy Companion App
+# NoID Privacy Companion
 
-**Microsoft Store PWA - Ready to Submit!**
+**Microsoft Store Companion App for NoID Privacy**
 
-## 📦 Was ist das?
+[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://nexusone23.github.io/noid-companion/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Eine **Companion App** für den Microsoft Store, die:
-- ✅ Features von NoID Privacy zeigt
-- ✅ Privacy Checker enthält (echter Mehrwert!)
-- ✅ Links zu GitHub & Waitlist
-- ✅ 100% Store-konform
+## 🛡️ About
 
----
+A Progressive Web App (PWA) companion for [NoID Privacy](https://github.com/NexusOne23/noid-privacy) - an enterprise-grade Windows 11 security and privacy hardening tool.
 
-## 🚀 SCHNELLSTART - UPLOAD ZUM STORE
+### Features
 
-### SCHRITT 1: Icons erstellen
+- 📱 **Interactive Tutorial** - Learn about Windows 11 privacy hardening
+- ✨ **Feature Showcase** - Explore NoID Privacy capabilities
+- 🔍 **Privacy Checker** - Basic privacy score assessment
+- ⬇️ **Download Links** - Direct access to free shell and PRO GUI versions
 
-Du brauchst 2 Icons:
-- `icon-192.png` (192x192 Pixel)
-- `icon-512.png` (512x512 Pixel)
+## 🚀 Live Demo
 
-**EINFACHSTE METHODE:**
-1. Gehe zu: https://favicon.io/favicon-generator/
-2. Erstelle Icon mit "🛡️" Emoji
-3. Download & benenne um zu `icon-192.png` und `icon-512.png`
-4. Kopiere in `companion-app/` Ordner
+Visit the app: [https://nexusone23.github.io/noid-companion/](https://nexusone23.github.io/noid-companion/)
 
-**ODER:** Nutze ein Design-Tool (Canva, Figma, etc.)
+## 📦 About NoID Privacy
 
----
+NoID Privacy is a comprehensive Windows 11 security hardening solution that implements:
 
-### SCHRITT 2: MSIX Package erstellen
+- 🔒 **478 Registry Keys** - Microsoft Security Baseline 25H2
+- 🛡️ **19 ASR Rules** - Attack Surface Reduction
+- 🌐 **~107k Domains Blocked** - Telemetry & tracking prevention
+- 💾 **Complete Backup & Restore** - 540+ settings backed up
+- ✅ **133 Verification Checks** - Real-time status monitoring
+- ⭐ **9.2/10 Audit Score** - Professional code audit
 
-**OPTION A: PWABuilder.com (EINFACHSTE METHODE!)**
+### Versions
 
-1. Gehe zu: https://www.pwabuilder.com/
-2. Gib URL ein: `file:///C:/Users/nexus/CascadeProjects/windsurf-project/companion-app/index.html`
-   
-   **ODER** hoste es kurz auf GitHub Pages:
-   - Erstelle neues Repo "noid-companion"
-   - Upload alle Dateien
-   - Enable GitHub Pages
-   - Nutze die URL: `https://yourusername.github.io/noid-companion/`
+- **Free Shell** - Open Source PowerShell scripts (available now)
+- **PRO GUI** - Beautiful Windows 11 app (coming Q1 2026)
 
-3. Klicke "Start" → "Build My PWA"
-4. Wähle "Windows" → "Generate Package"
-5. Download MSIX Package
-6. Fertig! 🎉
+Learn more: [github.com/NexusOne23/noid-privacy](https://github.com/NexusOne23/noid-privacy)
 
-**OPTION B: Visual Studio (Wenn du es hast)**
+## 🛠️ Tech Stack
 
-1. Öffne Visual Studio
-2. File → New → Project
-3. Wähle "Blank App (Universal Windows)"
-4. Kopiere HTML/CSS/JS rein
-5. Build → Create App Packages
-6. Fertig!
+- HTML5 + CSS3 + Vanilla JavaScript
+- Progressive Web App (PWA)
+- Service Worker for offline support
+- Responsive design (mobile & desktop)
+- No frameworks or dependencies
 
----
+## 📱 Screenshots
 
-### SCHRITT 3: Upload zum Microsoft Store
+- **Home** - Hero section with feature overview
+- **Features** - Interactive slider showcasing capabilities
+- **Checker** - Privacy score calculator
+- **Download** - Links to free shell and PRO GUI versions
 
-1. Gehe zu: https://partner.microsoft.com/dashboard
-2. Klicke auf "NoID Privacy Pro" (oder "New Product")
-3. Product Setup:
-   - Name: "NoID Privacy Companion"
-   - Category: Utilities & tools
-   - Subcategory: System optimization
+## 🚀 Development
 
-4. Pricing:
-   - **FREE** (wichtig!)
+### Local Setup
 
-5. Properties:
-   - Age rating: 3+
-   - Category: Utilities
+```bash
+# Clone the repository
+git clone https://github.com/NexusOne23/noid-companion.git
+cd noid-companion
 
-6. Packages:
-   - Upload dein MSIX Package
+# Serve locally (Python)
+python -m http.server 8000
 
-7. Store Listings:
-   ```
-   DESCRIPTION:
-   🛡️ NoID Privacy Companion
-   
-   Learn about Windows 11 privacy hardening and discover NoID Privacy - 
-   the professional security tool trusted by thousands.
-   
-   FEATURES:
-   ✅ Interactive Privacy Tutorial
-   ✅ Feature Showcase & Screenshots  
-   ✅ Privacy Score Checker
-   ✅ Direct Download Links
-   ✅ Latest News & Updates
-   
-   This companion app helps you understand Windows privacy issues and 
-   guides you to the full NoID Privacy solution.
-   
-   FREE SHELL VERSION:
-   Open Source PowerShell scripts available on GitHub.
-   
-   PRO GUI VERSION:
-   Beautiful Windows 11 app coming Q1 2026. Join the waitlist today!
-   
-   Note: This is an informational companion app. The full privacy 
-   hardening tool must be downloaded separately from noid-privacy.com
-   ```
+# Or use any static server
+npx serve .
+```
 
-8. Screenshots:
-   - Mache 4-5 Screenshots der App
-   - 1920x1080 oder 1366x768
-   - Zeige: Home, Features, Checker, Download
+Visit `http://localhost:8000` in your browser.
 
-9. Submit for Review!
+### Project Structure
+
+```
+├── index.html      # Main app
+├── styles.css      # Styling
+├── app.js          # Logic & interactions
+├── manifest.json   # PWA configuration
+├── sw.js           # Service worker
+├── icon-*.png      # App icons
+└── *.png           # Screenshots
+```
+
+## 🔗 Links
+
+- **Main Project**: [NoID Privacy](https://github.com/NexusOne23/noid-privacy)
+- **Live Demo**: [noid-companion](https://nexusone23.github.io/noid-companion/)
+- **PRO Waitlist**: [Join here](https://forms.gle/3kcQMtNxPjpqKKU6A)
+- **Website**: [noid-privacy.com](https://noid-privacy.com)
+
+## 📄 License
+
+MIT License - feel free to use and modify.
+
+## 🤝 Contributing
+
+This is a companion app for the main NoID Privacy project. For contributions to the core tool, visit the [main repository](https://github.com/NexusOne23/noid-privacy).
 
 ---
 
-## 📸 Screenshots machen
-
-1. Öffne `index.html` im Browser (Edge oder Chrome)
-2. Drücke F12 → Toggle Device Toolbar
-3. Wähle "Desktop" oder "Tablet"
-4. Navigiere durch die App
-5. Screenshot-Tool (Win + Shift + S)
-6. Speichere als `screenshot1.png`, etc.
-
-**TIPP:** Nutze Browser-Extension "Full Page Screen Capture"
-
----
-
-## ✅ CHECKLISTE VOR SUBMIT
-
-- [ ] Icons erstellt (192px & 512px)
-- [ ] MSIX Package gebaut
-- [ ] Screenshots gemacht (4-5 Stück)
-- [ ] Description geschrieben
-- [ ] Age Rating: 3+
-- [ ] Price: FREE
-- [ ] Category: Utilities & tools
-
----
-
-## 🎯 WAS DIE APP MACHT
-
-### HOME PAGE
-- Logo & Hero
-- 3 Info Cards (Features)
-- Version Comparison (Free vs PRO)
-
-### FEATURES PAGE
-- Interactive Slider (4 Slides)
-- Stats & Numbers
-- Feature Highlights
-
-### CHECKER PAGE
-- Privacy Score Calculator
-- Simulated Checks (Telemetry, Defender, etc.)
-- Recommendation → Download
-
-### DOWNLOAD PAGE
-- Free Shell (GitHub Link)
-- PRO Waitlist (Google Forms)
-- Additional Links (Docs, Screenshots, etc.)
-
----
-
-## 🔧 TECHNISCHE DETAILS
-
-**Tech Stack:**
-- HTML5 + CSS3 + Vanilla JS
-- PWA (Progressive Web App)
-- Service Worker (Offline Support)
-- Responsive Design
-
-**Dateien:**
-- `index.html` - Main App
-- `styles.css` - Styling
-- `app.js` - Logic
-- `manifest.json` - PWA Config
-- `sw.js` - Service Worker
-
-**Größe:** ~50 KB (sehr klein!)
-
----
-
-## 🎨 ANPASSUNGEN (Optional)
-
-### Links ändern:
-In `index.html` suche nach:
-- `https://github.com/NexusOne23/noid-privacy`
-- `https://forms.gle/3kcQMtNxPjpqKKU6A`
-- `https://noid-privacy.com`
-
-### Farben ändern:
-In `styles.css` suche nach:
-- `#667eea` (Primary Color)
-- `#764ba2` (Secondary Color)
-- `#f093fb` (Accent Color)
-
-### Text ändern:
-Einfach in `index.html` editieren!
-
----
-
-## ❓ HÄUFIGE FRAGEN
-
-**Q: Wird die App approved?**
-A: JA! Weil sie echten Mehrwert bietet (Privacy Checker) und nicht nur ein Link ist.
-
-**Q: Kostet das was?**
-A: Nur der Dev Account ($19 einmalig). Die App selbst ist FREE.
-
-**Q: Wie lange dauert Review?**
-A: 1-3 Tage normalerweise.
-
-**Q: Kann ich die App updaten?**
-A: JA! Einfach neue Version hochladen.
-
-**Q: Brauche ich Hosting?**
-A: NEIN! PWABuilder erstellt standalone MSIX.
-
----
-
-## 🚀 NACH DEM LAUNCH
-
-1. **Teile den Store Link:**
-   - Reddit Posts
-   - Twitter/X
-   - GitHub README
-
-2. **Sammle Reviews:**
-   - Bitte User um Bewertungen
-   - Antworte auf Feedback
-
-3. **Update regelmäßig:**
-   - Neue Features
-   - Bug Fixes
-   - Content Updates
-
----
-
-## 📞 SUPPORT
-
-Bei Fragen:
-1. Microsoft Store Support: https://developer.microsoft.com/support
-2. PWABuilder Discord: https://aka.ms/pwabuilderdiscord
-
----
-
-**VIEL ERFOLG BEIM LAUNCH!** 🎉
-
-Die App ist **100% ready** - du musst nur noch Icons erstellen und hochladen!
+**Made with ❤️ for Windows 11 privacy**
