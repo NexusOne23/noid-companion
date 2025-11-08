@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NoID Privacy Companion - Learn about Windows 11 privacy hardening">
+    <meta name="theme-color" content="#667eea">
+    <title>NoID Privacy Companion</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <div class="nav-item active" data-page="home">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+            </div>
+            <div class="nav-item" data-page="features">
+                <span class="nav-icon">✨</span>
+                <span class="nav-label">Features</span>
+            </div>
+            <div class="nav-item" data-page="checker">
+                <span class="nav-icon">🔍</span>
+                <span class="nav-label">Checker</span>
+            </div>
+            <div class="nav-item" data-page="download">
+                <span class="nav-icon">⬇️</span>
+                <span class="nav-label">Download</span>
+            </div>
+        </nav>
+
+        <!-- Pages -->
+        <div class="pages">
+            <!-- Home Page -->
+            <div class="page active" id="home">
+                <div class="hero">
+                    <div class="logo">🛡️</div>
+                    <h1>NoID Privacy</h1>
+                    <p class="subtitle">Enterprise-Grade Windows 11<br>Security & Privacy Hardening</p>
+                    <div class="badge">Coming Q1 2026</div>
+                </div>
+
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="info-icon">🔒</div>
+                        <h3>478 Registry Keys</h3>
+                        <p>Comprehensive security hardening based on Microsoft Baseline</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">💾</div>
+                        <h3>Full Backup & Restore</h3>
+                        <p>540+ settings backed up. One-click recovery anytime</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">✅</div>
+                        <h3>133 Verification Checks</h3>
+                        <p>Real-time status monitoring and professional audit</p>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h2>Two Versions Available</h2>
+                    <div class="version-cards">
+                        <div class="version-card">
+                            <h3>🆓 Free Shell Version</h3>
+                            <p>Open Source PowerShell scripts</p>
+                            <p class="version-status">Available Now</p>
+                        </div>
+                        <div class="version-card featured">
+                            <h3>💎 PRO GUI Version</h3>
+                            <p>Beautiful Windows 11 app</p>
+                            <p class="version-status">Coming Q1 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Page -->
+            <div class="page" id="features">
+                <div class="page-header">
+                    <h1>Features</h1>
+                    <p>What makes NoID Privacy special</p>
+                </div>
+
+                <div class="feature-slider">
+                    <div class="slider-container">
+                        <div class="slide active">
+                            <div class="slide-icon">🔐</div>
+                            <h2>Security Hardening</h2>
+                            <div class="slide-stats">
+                                <div class="stat">
+                                    <div class="stat-number">478</div>
+                                    <div class="stat-label">Registry Keys</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-number">19</div>
+                                    <div class="stat-label">ASR Rules</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-number">~107k</div>
+                                    <div class="stat-label">Domains Blocked</div>
+                                </div>
+                            </div>
+                            <p>Implements Microsoft Security Baseline 25H2 with additional privacy enhancements</p>
+                        </div>
+
+                        <div class="slide">
+                            <div class="slide-icon">💾</div>
+                            <h2>Backup & Restore</h2>
+                            <div class="slide-stats">
+                                <div class="stat">
+                                    <div class="stat-number">540+</div>
+                                    <div class="stat-label">Settings Backed Up</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-number">100%</div>
+                                    <div class="stat-label">Reversible</div>
+                                </div>
+                            </div>
+                            <p>Complete backup before any changes. One-click restore to original state anytime</p>
+                        </div>
+
+                        <div class="slide">
+                            <div class="slide-icon">✅</div>
+                            <h2>Verification System</h2>
+                            <div class="slide-stats">
+                                <div class="stat">
+                                    <div class="stat-number">133</div>
+                                    <div class="stat-label">Checks</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-number">9.2/10</div>
+                                    <div class="stat-label">Audit Score</div>
+                                </div>
+                            </div>
+                            <p>Real-time verification of all security settings. Professional code audit completed</p>
+                        </div>
+
+                        <div class="slide">
+                            <div class="slide-icon">🎨</div>
+                            <h2>Beautiful GUI (Coming Soon)</h2>
+                            <p class="coming-soon-text">Windows 11 Fluent Design</p>
+                            <ul class="feature-list">
+                                <li>✅ 1-Click Installation</li>
+                                <li>✅ Visual Dashboard</li>
+                                <li>✅ Auto-Update System</li>
+                                <li>✅ Premium Support</li>
+                            </ul>
+                            <p>Expected Launch: Q1 2026</p>
+                        </div>
+                    </div>
+
+                    <div class="slider-controls">
+                        <button class="slider-btn" id="prevSlide">←</button>
+                        <div class="slider-dots"></div>
+                        <button class="slider-btn" id="nextSlide">→</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Checker Page -->
+            <div class="page" id="checker">
+                <div class="page-header">
+                    <h1>Privacy Checker</h1>
+                    <p>Check your Windows 11 privacy status</p>
+                </div>
+
+                <div class="checker-container">
+                    <div class="score-display" id="scoreDisplay">
+                        <div class="score-circle">
+                            <div class="score-number" id="scoreNumber">?</div>
+                            <div class="score-label">Privacy Score</div>
+                        </div>
+                        <button class="check-btn" id="checkBtn">Run Privacy Check</button>
+                    </div>
+
+                    <div class="check-results" id="checkResults" style="display: none;">
+                        <h3>Check Results:</h3>
+                        <div class="result-list" id="resultList"></div>
+                        
+                        <div class="recommendation">
+                            <h3>💡 Recommendation</h3>
+                            <p>Download NoID Privacy to improve your privacy score and secure your system!</p>
+                            <button class="cta-btn" onclick="showPage('download')">Get NoID Privacy →</button>
+                        </div>
+                    </div>
+
+                    <div class="checker-info">
+                        <h3>What we check:</h3>
+                        <ul>
+                            <li>🔍 Telemetry Settings</li>
+                            <li>🛡️ Windows Defender Status</li>
+                            <li>📱 App Permissions</li>
+                            <li>🌐 Network Privacy</li>
+                            <li>🔐 Security Features</li>
+                        </ul>
+                        <p class="note">Note: This is a basic check. Full analysis requires NoID Privacy tool.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Download Page -->
+            <div class="page" id="download">
+                <div class="page-header">
+                    <h1>Get NoID Privacy</h1>
+                    <p>Choose your version</p>
+                </div>
+
+                <div class="download-options">
+                    <div class="download-card">
+                        <div class="download-icon">🆓</div>
+                        <h2>Free Shell Version</h2>
+                        <p class="download-desc">Open Source PowerShell scripts for power users</p>
+                        <ul class="download-features">
+                            <li>✅ Full functionality</li>
+                            <li>✅ Command-line interface</li>
+                            <li>✅ Community support</li>
+                            <li>✅ Forever free</li>
+                        </ul>
+                        <div class="download-status">Available Now</div>
+                        <a href="https://github.com/NexusOne23/noid-privacy" target="_blank" class="download-btn">
+                            ⭐ View on GitHub
+                        </a>
+                    </div>
+
+                    <div class="download-card featured">
+                        <div class="download-icon">💎</div>
+                        <h2>PRO GUI Version</h2>
+                        <p class="download-desc">Beautiful Windows 11 app with premium features</p>
+                        <ul class="download-features">
+                            <li>✅ 1-Click installation</li>
+                            <li>✅ Visual dashboard</li>
+                            <li>✅ Auto-updates</li>
+                            <li>✅ Premium support</li>
+                        </ul>
+                        <div class="download-status coming">Coming Q1 2026</div>
+                        <a href="https://forms.gle/3kcQMtNxPjpqKKU6A" target="_blank" class="download-btn primary">
+                            🔔 Join Waitlist
+                        </a>
+                        <p class="early-bird">💡 First 100 customers: €24.99 (regular €34.99)</p>
+                    </div>
+                </div>
+
+                <div class="additional-links">
+                    <h3>More Information</h3>
+                    <div class="link-grid">
+                        <a href="https://noid-privacy.com" target="_blank" class="link-card">
+                            <span class="link-icon">🌐</span>
+                            <span class="link-text">Official Website</span>
+                        </a>
+                        <a href="https://github.com/NexusOne23/noid-privacy/blob/main/SCREENSHOTS.md" target="_blank" class="link-card">
+                            <span class="link-icon">📸</span>
+                            <span class="link-text">Screenshots</span>
+                        </a>
+                        <a href="https://github.com/NexusOne23/noid-privacy#readme" target="_blank" class="link-card">
+                            <span class="link-icon">📖</span>
+                            <span class="link-text">Documentation</span>
+                        </a>
+                        <a href="https://github.com/NexusOne23/noid-privacy/blob/main/KNOWN_ISSUES.md" target="_blank" class="link-card">
+                            <span class="link-icon">⚠️</span>
+                            <span class="link-text">Known Issues</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
