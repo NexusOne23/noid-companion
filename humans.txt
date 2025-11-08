@@ -1,0 +1,18 @@
+/* TEAM */
+Developer: NoID Privacy Team
+Site: https://github.com/NexusOne23/noid-privacy
+Location: Global
+
+/* THANKS */
+Microsoft Security Baseline Team
+Open Source Community
+Windows Privacy Advocates
+
+/* SITE */
+Last update: 2025-11-08
+Language: English
+Doctype: HTML5
+IDE: Visual Studio Code, Windsurf
+Standards: HTML5, CSS3, ES6+
+Components: PWA, Service Worker, Manifest
+Software: Git, GitHub Pages

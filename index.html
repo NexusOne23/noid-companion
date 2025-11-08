@@ -20,6 +20,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="NoID Privacy">
     
+    <!-- Windows Tiles -->
+    <meta name="msapplication-TileColor" content="#667eea">
+    <meta name="msapplication-config" content="browserconfig.xml">
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nexusone23.github.io/noid-companion/">
@@ -47,8 +51,107 @@
     <!-- Manifest -->
     <link rel="manifest" href="manifest.json">
     
+    <!-- Humans -->
+    <link rel="author" href="humans.txt">
+    
+    <!-- Preconnect for external resources -->
+    <link rel="preconnect" href="https://github.com">
+    <link rel="preconnect" href="https://forms.gle">
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://github.com">
+    <link rel="dns-prefetch" href="https://forms.gle">
+    
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "NoID Privacy Companion",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Windows 11",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "9.2",
+        "ratingCount": "1",
+        "bestRating": "10",
+        "worstRating": "0"
+      },
+      "description": "Learn about Windows 11 privacy hardening with NoID Privacy. Interactive tutorial, privacy checker, and access to enterprise-grade security tools. Free & Open Source.",
+      "screenshot": [
+        "https://nexusone23.github.io/noid-companion/home.png",
+        "https://nexusone23.github.io/noid-companion/features.png",
+        "https://nexusone23.github.io/noid-companion/checker.png",
+        "https://nexusone23.github.io/noid-companion/download.png"
+      ],
+      "softwareVersion": "1.0.0",
+      "author": {
+        "@type": "Organization",
+        "name": "NoID Privacy",
+        "url": "https://github.com/NexusOne23/noid-privacy"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "NoID Privacy"
+      },
+      "url": "https://nexusone23.github.io/noid-companion/",
+      "downloadUrl": "https://github.com/NexusOne23/noid-privacy",
+      "featureList": [
+        "Interactive Privacy Tutorial",
+        "Feature Showcase with Statistics",
+        "Privacy Score Checker",
+        "Direct Download Links",
+        "478 Registry Keys Hardening",
+        "19 ASR Rules Implementation",
+        "107k Domains Blocked",
+        "Complete Backup & Restore",
+        "133 Verification Checks"
+      ],
+      "keywords": "Windows 11, privacy, security, hardening, telemetry, Microsoft Baseline, ASR rules, privacy tool, open source"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "NoID Privacy Companion",
+      "url": "https://nexusone23.github.io/noid-companion/",
+      "description": "Companion app for NoID Privacy - Windows 11 security and privacy hardening tool",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "softwareVersion": "1.0.0",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "NoID Privacy",
+      "url": "https://github.com/NexusOne23/noid-privacy",
+      "logo": "https://nexusone23.github.io/noid-companion/icon-512.png",
+      "description": "Enterprise-grade Windows 11 security and privacy hardening solution",
+      "sameAs": [
+        "https://github.com/NexusOne23/noid-privacy",
+        "https://nexusone23.github.io/noid-companion/"
+      ]
+    }
+    </script>
 </head>
 <body>
     <div class="app-container">

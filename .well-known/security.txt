@@ -1,0 +1,10 @@
+Contact: https://github.com/NexusOne23/noid-privacy/issues
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en, de
+Canonical: https://nexusone23.github.io/noid-companion/.well-known/security.txt
+Policy: https://github.com/NexusOne23/noid-privacy/blob/main/SECURITY.md
+Acknowledgments: https://github.com/NexusOne23/noid-privacy#contributors
+
+# Security Policy
+# If you discover a security vulnerability, please report it via GitHub Issues.
+# We take all security reports seriously and will respond promptly.

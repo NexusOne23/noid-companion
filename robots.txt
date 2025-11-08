@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://nexusone23.github.io/noid-companion/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 0
+
+# Disallow nothing - everything is public
