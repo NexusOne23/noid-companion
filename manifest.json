@@ -29,27 +29,31 @@
   "screenshots": [
     {
       "src": "home.png",
-      "sizes": "1024x576",
+      "sizes": "2553x1278",
       "type": "image/png",
-      "label": "Home Screen"
+      "label": "Home Screen",
+      "form_factor": "wide"
     },
     {
       "src": "features.png",
-      "sizes": "1024x576",
+      "sizes": "2553x1278",
       "type": "image/png",
-      "label": "Features"
+      "label": "Features",
+      "form_factor": "wide"
     },
     {
       "src": "checker.png",
-      "sizes": "1024x576",
+      "sizes": "2553x1278",
       "type": "image/png",
-      "label": "Privacy Checker"
+      "label": "Privacy Checker",
+      "form_factor": "wide"
     },
     {
       "src": "download.png",
-      "sizes": "1024x576",
+      "sizes": "2553x1278",
       "type": "image/png",
-      "label": "Download Options"
+      "label": "Download Options",
+      "form_factor": "wide"
     }
   ]
 }
