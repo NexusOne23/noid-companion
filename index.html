@@ -56,11 +56,9 @@
     
     <!-- Preconnect for external resources -->
     <link rel="preconnect" href="https://github.com">
-    <link rel="preconnect" href="https://forms.gle">
     
     <!-- DNS Prefetch -->
     <link rel="dns-prefetch" href="https://github.com">
-    <link rel="dns-prefetch" href="https://forms.gle">
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
@@ -90,7 +88,7 @@
         "https://nexusone23.github.io/noid-companion/home.png",
         "https://nexusone23.github.io/noid-companion/features.png",
         "https://nexusone23.github.io/noid-companion/checker.png",
-        "https://nexusone23.github.io/noid-companion/download.png"
+        "https://nexusone23.github.io/noid-companion/learnmore.png"
       ],
       "softwareVersion": "1.0.0",
       "author": {
@@ -108,7 +106,7 @@
         "Interactive Privacy Tutorial",
         "Feature Showcase with Statistics",
         "Privacy Score Checker",
-        "Direct Download Links",
+        "Direct GitHub Access",
         "478 Registry Keys Hardening",
         "19 ASR Rules Implementation",
         "107k Domains Blocked",
@@ -170,8 +168,8 @@
                 <span class="nav-label">Checker</span>
             </div>
             <div class="nav-item" data-page="download">
-                <span class="nav-icon">⬇️</span>
-                <span class="nav-label">Download</span>
+                <span class="nav-icon">📖</span>
+                <span class="nav-label">Learn More</span>
             </div>
         </nav>
 
@@ -183,7 +181,7 @@
                     <div class="logo">🛡️</div>
                     <h1>NoID Privacy</h1>
                     <p class="subtitle">Enterprise-Grade Windows 11<br>Security & Privacy Hardening</p>
-                    <div class="badge">Coming Q1 2026</div>
+                    <div class="badge">Free & Open Source</div>
                 </div>
 
                 <div class="info-cards">
@@ -208,14 +206,14 @@
                     <h2>Two Versions Available</h2>
                     <div class="version-cards">
                         <div class="version-card">
-                            <h3>🆓 Free Shell Version</h3>
+                            <h3>🆓 Shell Version</h3>
                             <p>Open Source PowerShell scripts</p>
                             <p class="version-status">Available Now</p>
                         </div>
                         <div class="version-card featured">
-                            <h3>💎 PRO GUI Version</h3>
+                            <h3>💎 GUI Version</h3>
                             <p>Beautiful Windows 11 app</p>
-                            <p class="version-status">Coming Q1 2026</p>
+                            <p class="version-status">In Development</p>
                         </div>
                     </div>
                 </div>
@@ -290,9 +288,9 @@
                                 <li>✅ 1-Click Installation</li>
                                 <li>✅ Visual Dashboard</li>
                                 <li>✅ Auto-Update System</li>
-                                <li>✅ Premium Support</li>
+                                <li>✅ Community Support</li>
                             </ul>
-                            <p>Expected Launch: Q1 2026</p>
+                            <p>Currently in development</p>
                         </div>
                     </div>
 
@@ -326,8 +324,8 @@
                         
                         <div class="recommendation">
                             <h3>💡 Recommendation</h3>
-                            <p>Download NoID Privacy to improve your privacy score and secure your system!</p>
-                            <button class="cta-btn" onclick="showPage('download')">Get NoID Privacy →</button>
+                            <p>Use NoID Privacy to improve your privacy score and secure your system!</p>
+                            <button class="cta-btn" onclick="showPage('download')">Learn More →</button>
                         </div>
                     </div>
 
@@ -342,14 +340,50 @@
                         </ul>
                         <p class="note">Note: This is a basic check. Full analysis requires NoID Privacy tool.</p>
                     </div>
+
+                    <div class="feature-comparison" style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 15px;">
+                        <h3>✅ Interactive Feature Checklist</h3>
+                        <p style="opacity: 0.9; margin-bottom: 15px;">Check which security features you want to enable:</p>
+                        <div class="feature-checklist">
+                            <label class="feature-item">
+                                <input type="checkbox" id="check-telemetry">
+                                <span>Disable Telemetry (478 registry keys)</span>
+                            </label>
+                            <label class="feature-item">
+                                <input type="checkbox" id="check-asr">
+                                <span>Enable ASR Rules (19 attack surface rules)</span>
+                            </label>
+                            <label class="feature-item">
+                                <input type="checkbox" id="check-hosts">
+                                <span>Block Tracking Domains (~107k domains)</span>
+                            </label>
+                            <label class="feature-item">
+                                <input type="checkbox" id="check-defender">
+                                <span>Harden Windows Defender (11 layers)</span>
+                            </label>
+                            <label class="feature-item">
+                                <input type="checkbox" id="check-firewall">
+                                <span>Configure Firewall (strict inbound)</span>
+                            </label>
+                            <label class="feature-item">
+                                <input type="checkbox" id="check-credentials">
+                                <span>Credential Guard + LSA Protection</span>
+                            </label>
+                        </div>
+                        <div class="comparison-result" id="comparisonResult" style="margin-top: 15px; padding: 15px; background: rgba(0,0,0,0.2); border-radius: 10px; display: none;">
+                            <p style="font-weight: 600;">Your Selection:</p>
+                            <p id="selectedFeatures"></p>
+                            <button class="check-btn" onclick="showPage('download')" style="margin-top: 10px;">Learn More →</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Download Page -->
+            <!-- Learn More Page -->
             <div class="page" id="download">
                 <div class="page-header">
-                    <h1>Get NoID Privacy</h1>
-                    <p>Choose your version</p>
+                    <h1>Learn More</h1>
+                    <p>About NoID Privacy</p>
                 </div>
 
                 <div class="download-options">
@@ -366,37 +400,37 @@
                         <div class="download-status available">✅ Available Now</div>
                         <a href="https://github.com/NexusOne23/noid-privacy" target="_blank" rel="noopener noreferrer" class="download-btn github">
                             <span class="btn-icon">⭐</span>
-                            <span class="btn-text">Download on GitHub</span>
+                            <span class="btn-text">View on GitHub</span>
                             <span class="btn-arrow">→</span>
                         </a>
                     </div>
 
                     <div class="download-card featured">
                         <div class="download-icon">💎</div>
-                        <h2>PRO GUI Version</h2>
-                        <p class="download-desc">Beautiful Windows 11 app with premium features</p>
+                        <h2>GUI Version</h2>
+                        <p class="download-desc">Beautiful Windows 11 app with advanced features</p>
                         <ul class="download-features">
                             <li>✅ 1-Click installation</li>
                             <li>✅ Visual dashboard</li>
                             <li>✅ Auto-updates</li>
-                            <li>✅ Premium support</li>
+                            <li>✅ Community support</li>
                         </ul>
-                        <div class="download-status coming">🚀 Coming Q1 2026</div>
-                        <a href="https://forms.gle/3kcQMtNxPjpqKKU6A" target="_blank" rel="noopener noreferrer" class="download-btn primary">
-                            <span class="btn-icon">🔔</span>
-                            <span class="btn-text">Join Waitlist</span>
+                        <div class="download-status coming">🚧 In Development</div>
+                        <a href="https://github.com/NexusOne23/noid-privacy" target="_blank" rel="noopener noreferrer" class="download-btn primary">
+                            <span class="btn-icon">⭐</span>
+                            <span class="btn-text">Star on GitHub</span>
                             <span class="btn-arrow">→</span>
                         </a>
-                        <p class="early-bird">🎁 Early Bird: €24.99 (Save €10!)</p>
+                        <p class="early-bird">📢 Follow the project for updates</p>
                     </div>
                 </div>
 
                 <div class="additional-links">
                     <h3>More Information</h3>
                     <div class="link-grid">
-                        <a href="https://noid-privacy.com" target="_blank" rel="noopener noreferrer" class="link-card">
-                            <span class="link-icon">🌐</span>
-                            <span class="link-text">Official Website</span>
+                        <a href="https://github.com/NexusOne23/noid-privacy/issues" target="_blank" rel="noopener noreferrer" class="link-card">
+                            <span class="link-icon">💬</span>
+                            <span class="link-text">Issues & Support</span>
                         </a>
                         <a href="https://github.com/NexusOne23/noid-privacy/blob/main/SCREENSHOTS.md" target="_blank" rel="noopener noreferrer" class="link-card">
                             <span class="link-icon">📸</span>

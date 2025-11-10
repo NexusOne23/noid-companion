@@ -49,10 +49,10 @@
       "form_factor": "wide"
     },
     {
-      "src": "download.png",
+      "src": "learnmore.png",
       "sizes": "2553x1278",
       "type": "image/png",
-      "label": "Download Options",
+      "label": "Learn More",
       "form_factor": "wide"
     }
   ]

@@ -197,3 +197,25 @@ if ('serviceWorker' in navigator) {
 
 // Make showPage available globally
 window.showPage = showPage;
+
+// Interactive Feature Checklist
+const featureCheckboxes = document.querySelectorAll('.feature-checklist input[type="checkbox"]');
+const comparisonResult = document.getElementById('comparisonResult');
+const selectedFeatures = document.getElementById('selectedFeatures');
+
+featureCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', updateFeatureComparison);
+});
+
+function updateFeatureComparison() {
+    const selected = Array.from(featureCheckboxes)
+        .filter(cb => cb.checked)
+        .map(cb => cb.nextElementSibling.textContent);
+    
+    if (selected.length > 0) {
+        selectedFeatures.textContent = `You selected ${selected.length} out of 6 features. NoID Privacy will help you implement all of these!`;
+        comparisonResult.style.display = 'block';
+    } else {
+        comparisonResult.style.display = 'none';
+    }
+}

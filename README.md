@@ -13,8 +13,8 @@ A Progressive Web App (PWA) companion for [NoID Privacy](https://github.com/Nexu
 
 - 📱 **Interactive Tutorial** - Learn about Windows 11 privacy hardening
 - ✨ **Feature Showcase** - Explore NoID Privacy capabilities
-- 🔍 **Privacy Checker** - Basic privacy score assessment
-- ⬇️ **Download Links** - Direct access to free shell and PRO GUI versions
+- 🔍 **Privacy Checker** - Basic privacy score assessment with interactive checklist
+- 📖 **Learn More** - Information about free shell and GUI versions (in development)
 
 ## 🚀 Live Demo
 
@@ -34,7 +34,7 @@ NoID Privacy is a comprehensive Windows 11 security hardening solution that impl
 ### Versions
 
 - **Free Shell** - Open Source PowerShell scripts (available now)
-- **PRO GUI** - Beautiful Windows 11 app (coming Q1 2026)
+- **GUI Version** - Beautiful Windows 11 app (in development)
 
 Learn more: [github.com/NexusOne23/noid-privacy](https://github.com/NexusOne23/noid-privacy)
 
@@ -50,8 +50,8 @@ Learn more: [github.com/NexusOne23/noid-privacy](https://github.com/NexusOne23/n
 
 - **Home** - Hero section with feature overview
 - **Features** - Interactive slider showcasing capabilities
-- **Checker** - Privacy score calculator
-- **Download** - Links to free shell and PRO GUI versions
+- **Checker** - Privacy score calculator with interactive feature checklist
+- **Learn More** - Information about free shell and GUI versions
 
 ## 🚀 Development
 
@@ -87,8 +87,8 @@ Visit `http://localhost:8000` in your browser.
 
 - **Main Project**: [NoID Privacy](https://github.com/NexusOne23/noid-privacy)
 - **Live Demo**: [noid-companion](https://nexusone23.github.io/noid-companion/)
-- **PRO Waitlist**: [Join here](https://forms.gle/3kcQMtNxPjpqKKU6A)
-- **Website**: [noid-privacy.com](https://noid-privacy.com)
+- **Issues & Support**: [GitHub Issues](https://github.com/NexusOne23/noid-privacy/issues)
+- **Documentation**: [README](https://github.com/NexusOne23/noid-privacy#readme)
 
 ## 📄 License
 
