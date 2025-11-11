@@ -154,22 +154,22 @@
 <body>
     <div class="app-container">
         <!-- Navigation -->
-        <nav class="nav-bar">
-            <div class="nav-item active" data-page="home">
-                <span class="nav-icon">🏠</span>
-                <span class="nav-label">Home</span>
+        <nav class="nav-bar" role="navigation" aria-label="Main navigation">
+            <div class="nav-item active" data-page="home" role="button" tabindex="0" aria-label="Navigate to Home page">
+                <div class="nav-icon" aria-hidden="true">🏠</div>
+                <div class="nav-label">Home</div>
             </div>
-            <div class="nav-item" data-page="features">
-                <span class="nav-icon">✨</span>
-                <span class="nav-label">Features</span>
+            <div class="nav-item" data-page="features" role="button" tabindex="0" aria-label="Navigate to Features page">
+                <div class="nav-icon" aria-hidden="true">✨</div>
+                <div class="nav-label">Features</div>
             </div>
-            <div class="nav-item" data-page="checker">
-                <span class="nav-icon">🔍</span>
-                <span class="nav-label">Checker</span>
+            <div class="nav-item" data-page="checker" role="button" tabindex="0" aria-label="Navigate to Privacy Checker page">
+                <div class="nav-icon" aria-hidden="true">🔍</div>
+                <div class="nav-label">Checker</div>
             </div>
-            <div class="nav-item" data-page="download">
-                <span class="nav-icon">📖</span>
-                <span class="nav-label">Learn More</span>
+            <div class="nav-item" data-page="download" role="button" tabindex="0" aria-label="Navigate to Learn More page">
+                <div class="nav-icon" aria-hidden="true">📖</div>
+                <div class="nav-label">Learn More</div>
             </div>
         </nav>
 
@@ -181,7 +181,10 @@
                     <div class="logo">🛡️</div>
                     <h1>NoID Privacy</h1>
                     <p class="subtitle">Enterprise-Grade Windows 11<br>Security & Privacy Hardening</p>
-                    <div class="badge">Free & Open Source</div>
+                    <button class="hero-features-btn" onclick="showPage('features')" aria-label="View all features">
+                        <span>View All Features</span>
+                        <span class="arrow">→</span>
+                    </button>
                 </div>
 
                 <div class="info-cards">
@@ -201,20 +204,17 @@
                         <p>Real-time status monitoring and professional audit</p>
                     </div>
                 </div>
-
-                <div class="cta-section">
-                    <h2>Two Versions Available</h2>
-                    <div class="version-cards">
-                        <div class="version-card">
-                            <h3>🆓 Shell Version</h3>
-                            <p>Open Source PowerShell scripts</p>
-                            <p class="version-status">Available Now</p>
-                        </div>
-                        <div class="version-card featured">
-                            <h3>💎 GUI Version</h3>
-                            <p>Beautiful Windows 11 app</p>
-                            <p class="version-status">In Development</p>
-                        </div>
+                
+                <!-- Quick Action: Privacy Checker -->
+                <div class="quick-action-section">
+                    <div class="quick-action-card">
+                        <div class="quick-action-icon">🔍</div>
+                        <h3>Try the Privacy Checker</h3>
+                        <p>Test your browser security right now - no installation needed!</p>
+                        <button class="quick-action-btn" onclick="showPage('checker')" aria-label="Go to Privacy Checker">
+                            <span class="btn-text">Run Privacy Check</span>
+                            <span class="btn-arrow">→</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -294,10 +294,19 @@
                         </div>
                     </div>
 
-                    <div class="slider-controls">
-                        <button class="slider-btn" id="prevSlide">←</button>
-                        <div class="slider-dots"></div>
-                        <button class="slider-btn" id="nextSlide">→</button>
+                    <div class="slider-controls" role="group" aria-label="Feature slider controls">
+                        <button class="slider-btn" id="prevSlide" aria-label="Previous feature slide">←</button>
+                        <div class="slider-dots" role="tablist" aria-label="Feature slide indicators"></div>
+                        <button class="slider-btn" id="nextSlide" aria-label="Next feature slide">→</button>
+                    </div>
+                    
+                    <div class="features-footer-links">
+                        <button class="footer-link-btn" onclick="showPage('download')" aria-label="Learn more about NoID Privacy">
+                            📖 Learn More
+                        </button>
+                        <button class="footer-link-btn" onclick="showPage('checker')" aria-label="Try Privacy Checker">
+                            🔍 Try Privacy Checker
+                        </button>
                     </div>
                 </div>
             </div>
@@ -305,77 +314,46 @@
             <!-- Checker Page -->
             <div class="page" id="checker">
                 <div class="page-header">
-                    <h1>Privacy Checker</h1>
-                    <p>Check your Windows 11 privacy status</p>
+                    <h1>Browser Security & Privacy Checker</h1>
+                    <p>15 real checks for your browser security and privacy</p>
                 </div>
 
                 <div class="checker-container">
                     <div class="score-display" id="scoreDisplay">
-                        <div class="score-circle">
-                            <div class="score-number" id="scoreNumber">?</div>
+                        <div class="score-circle" role="status" aria-live="polite">
+                            <div class="score-number" id="scoreNumber" aria-label="Privacy score">?</div>
                             <div class="score-label">Privacy Score</div>
                         </div>
-                        <button class="check-btn" id="checkBtn">Run Privacy Check</button>
+                        <button class="check-btn" id="checkBtn" aria-label="Run browser privacy and security check">Run Privacy Check</button>
                     </div>
 
-                    <div class="check-results" id="checkResults" style="display: none;">
-                        <h3>Check Results:</h3>
-                        <div class="result-list" id="resultList"></div>
-                        
-                        <div class="recommendation">
-                            <h3>💡 Recommendation</h3>
-                            <p>Use NoID Privacy to improve your privacy score and secure your system!</p>
-                            <button class="cta-btn" onclick="showPage('download')">Learn More →</button>
-                        </div>
+                    <div class="check-results" id="checkResults" style="display: none;" role="region" aria-label="Privacy check results">
+                        <h2>Check Results:</h2>
+                        <div class="result-list" id="resultList" role="list"></div>
                     </div>
 
                     <div class="checker-info">
-                        <h3>What we check:</h3>
-                        <ul>
-                            <li>🔍 Telemetry Settings</li>
-                            <li>🛡️ Windows Defender Status</li>
-                            <li>📱 App Permissions</li>
-                            <li>🌐 Network Privacy</li>
-                            <li>🔐 Security Features</li>
+                        <h3>What we check (15 real checks):</h3>
+                        <ul style="column-count: 2; column-gap: 20px;">
+                            <li>🔒 HTTPS Status</li>
+                            <li>🚫 Do Not Track</li>
+                            <li>🍪 Third-Party Cookies</li>
+                            <li>📍 Geolocation Permission</li>
+                            <li>🔔 Notification Permission</li>
+                            <li>📷 Camera Permission</li>
+                            <li>🎤 Microphone Permission</li>
+                            <li>🌐 WebRTC IP Leak</li>
+                            <li>🎨 Canvas Fingerprinting</li>
+                            <li>🔐 Secure Context</li>
+                            <li>🔗 Referrer Policy</li>
+                            <li>🛡️ Content Security Policy</li>
+                            <li>📦 Mixed Content</li>
+                            <li>⚙️ JavaScript Security</li>
+                            <li>🌐 Public IP Check</li>
                         </ul>
-                        <p class="note">Note: This is a basic check. Full analysis requires NoID Privacy tool.</p>
+                        <p class="note" style="margin-top: 15px;">✅ These are real browser-based checks! For full Windows system analysis (Registry, Defender, Firewall, etc.), <a href="#" onclick="showPage('download'); return false;" style="color: #a5b4fc; text-decoration: underline;">use the NoID Privacy tool</a>.</p>
                     </div>
 
-                    <div class="feature-comparison" style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 15px;">
-                        <h3>✅ Interactive Feature Checklist</h3>
-                        <p style="opacity: 0.9; margin-bottom: 15px;">Check which security features you want to enable:</p>
-                        <div class="feature-checklist">
-                            <label class="feature-item">
-                                <input type="checkbox" id="check-telemetry">
-                                <span>Disable Telemetry (478 registry keys)</span>
-                            </label>
-                            <label class="feature-item">
-                                <input type="checkbox" id="check-asr">
-                                <span>Enable ASR Rules (19 attack surface rules)</span>
-                            </label>
-                            <label class="feature-item">
-                                <input type="checkbox" id="check-hosts">
-                                <span>Block Tracking Domains (~107k domains)</span>
-                            </label>
-                            <label class="feature-item">
-                                <input type="checkbox" id="check-defender">
-                                <span>Harden Windows Defender (11 layers)</span>
-                            </label>
-                            <label class="feature-item">
-                                <input type="checkbox" id="check-firewall">
-                                <span>Configure Firewall (strict inbound)</span>
-                            </label>
-                            <label class="feature-item">
-                                <input type="checkbox" id="check-credentials">
-                                <span>Credential Guard + LSA Protection</span>
-                            </label>
-                        </div>
-                        <div class="comparison-result" id="comparisonResult" style="margin-top: 15px; padding: 15px; background: rgba(0,0,0,0.2); border-radius: 10px; display: none;">
-                            <p style="font-weight: 600;">Your Selection:</p>
-                            <p id="selectedFeatures"></p>
-                            <button class="check-btn" onclick="showPage('download')" style="margin-top: 10px;">Learn More →</button>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -450,6 +428,7 @@
         </div>
     </div>
 
+    <script src="checker-real.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
