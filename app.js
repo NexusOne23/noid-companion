@@ -144,19 +144,28 @@ function displayResults(results) {
     // Update score (e.g., "12/15")
     scoreNumber.textContent = `${results.score}/${results.maxScore}`;
     
-    // Color code score
+    // Color code score with vibrant colors and glow
     const scoreCircle = document.querySelector('.score-circle');
     const percentage = (results.score / results.maxScore) * 100;
     
     if (percentage >= 80) {
-        scoreCircle.style.borderColor = '#4caf50';
-        scoreNumber.style.color = '#4caf50';
+        // Bright lime green that pops on purple background
+        scoreCircle.style.borderColor = '#00ff88';
+        scoreCircle.style.boxShadow = '0 0 20px rgba(0, 255, 136, 0.4)';
+        scoreNumber.style.color = '#00ff88';
+        scoreNumber.style.textShadow = '0 0 15px rgba(0, 255, 136, 0.5)';
     } else if (percentage >= 50) {
-        scoreCircle.style.borderColor = '#ff9800';
-        scoreNumber.style.color = '#ff9800';
+        // Bright orange
+        scoreCircle.style.borderColor = '#ffaa00';
+        scoreCircle.style.boxShadow = '0 0 20px rgba(255, 170, 0, 0.3)';
+        scoreNumber.style.color = '#ffaa00';
+        scoreNumber.style.textShadow = '0 0 15px rgba(255, 170, 0, 0.4)';
     } else {
-        scoreCircle.style.borderColor = '#f44336';
-        scoreNumber.style.color = '#f44336';
+        // Bright red
+        scoreCircle.style.borderColor = '#ff4444';
+        scoreCircle.style.boxShadow = '0 0 20px rgba(255, 68, 68, 0.3)';
+        scoreNumber.style.color = '#ff4444';
+        scoreNumber.style.textShadow = '0 0 15px rgba(255, 68, 68, 0.4)';
     }
 
     // Display results
