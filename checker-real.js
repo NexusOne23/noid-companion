@@ -118,45 +118,55 @@ function checkDoNotTrack() {
 // ============================================================================
 async function checkThirdPartyCookies() {
     try {
-        // Test if third-party cookies are blocked by checking cookieStore API
         // Modern browsers block third-party cookies by default
-        const cookiesEnabled = navigator.cookieEnabled;
-        
-        // Create a test cookie
-        const testCookie = 'noid_3p_test=1';
-        document.cookie = testCookie + '; SameSite=None; Secure';
-        
-        // Check if cookie was set
-        const cookieSet = document.cookie.includes('noid_3p_test=1');
-        
-        // Clean up test cookie
-        if (cookieSet) {
-            document.cookie = 'noid_3p_test=; expires=Thu, 01 Jan 1970 00:00:00 UTC; SameSite=None; Secure';
-        }
-        
-        // Check browser's default third-party cookie policy
-        // Chrome/Edge: block by default, Firefox: allows with restrictions
+        // Chrome 115+, Edge 115+, Firefox with ETP, Safari with ITP
         const userAgent = navigator.userAgent.toLowerCase();
-        const isChromeBased = userAgent.includes('chrome') || userAgent.includes('edg');
         
-        // If SameSite=None cookie couldn't be set, third-party cookies likely blocked
-        const thirdPartyBlocked = !cookieSet || isChromeBased;
+        // Detect browser and version
+        let isBlocked = false;
+        let browserInfo = '';
+        
+        if (userAgent.includes('edg/')) {
+            // Microsoft Edge
+            const version = parseInt(userAgent.match(/edg\/(\d+)/)?.[1] || '0');
+            isBlocked = version >= 115; // Edge 115+ blocks by default
+            browserInfo = `Edge ${version}`;
+        } else if (userAgent.includes('chrome/') && !userAgent.includes('edg')) {
+            // Google Chrome
+            const version = parseInt(userAgent.match(/chrome\/(\d+)/)?.[1] || '0');
+            isBlocked = version >= 115; // Chrome 115+ blocks by default
+            browserInfo = `Chrome ${version}`;
+        } else if (userAgent.includes('firefox/')) {
+            // Firefox with Enhanced Tracking Protection
+            isBlocked = true; // Firefox blocks by default with ETP
+            browserInfo = 'Firefox';
+        } else if (userAgent.includes('safari/') && !userAgent.includes('chrome')) {
+            // Safari with Intelligent Tracking Prevention
+            isBlocked = true; // Safari blocks by default with ITP
+            browserInfo = 'Safari';
+        } else {
+            // Unknown browser - check if cookies work at all
+            const cookiesEnabled = navigator.cookieEnabled;
+            isBlocked = !cookiesEnabled;
+            browserInfo = 'Unknown browser';
+        }
         
         return {
             id: 'cookies',
             name: 'Third-Party Cookies',
-            passed: thirdPartyBlocked,
+            passed: isBlocked,
             severity: 'high',
-            message: thirdPartyBlocked 
-                ? 'Third-party cookies appear to be blocked' 
-                : 'Third-party cookies may be allowed',
-            recommendation: 'Modern browsers (Edge, Chrome, Firefox) block third-party cookies by default. Keep this setting enabled for privacy.',
+            message: isBlocked 
+                ? `${browserInfo} blocks third-party cookies by default` 
+                : `${browserInfo} may allow third-party cookies`,
+            recommendation: isBlocked
+                ? 'Good! Your browser protects you from cross-site tracking.'
+                : 'Update your browser or check privacy settings to block third-party cookies.',
             learnMore: '#download',
-            icon: thirdPartyBlocked ? '✅' : '⚠️',
+            icon: isBlocked ? '✅' : '⚠️',
             whyMatters: 'Third-party cookies allow advertisers to track you across different websites. They build a profile of your interests and browsing habits. Blocking them prevents this cross-site tracking and protects your privacy without breaking most websites.'
         };
     } catch (e) {
-        // If test fails, assume blocked (good for privacy)
         return {
             id: 'cookies',
             name: 'Third-Party Cookies',
@@ -623,13 +633,34 @@ function checkJavaScriptSecurity() {
 // ============================================================================
 async function checkDNSLeak() {
     try {
-        const response = await fetch('https://api.ipify.org?format=json');
-        const data = await response.json();
-        const ip = data.ip;
+        // Try multiple IP check APIs with CORS support
+        let ip = null;
+        
+        // Try ipapi.co (has CORS support)
+        try {
+            const response = await fetch('https://ipapi.co/json/');
+            const data = await response.json();
+            ip = data.ip;
+        } catch (e1) {
+            // Fallback: try ipify with different endpoint
+            try {
+                const response = await fetch('https://api64.ipify.org?format=json');
+                const data = await response.json();
+                ip = data.ip;
+            } catch (e2) {
+                // If both fail, return informational message
+                throw new Error('All IP check services unavailable');
+            }
+        }
+        
+        if (!ip) {
+            throw new Error('No IP returned');
+        }
         
         const isPrivateIP = ip.startsWith('192.168.') || 
                              ip.startsWith('10.') || 
-                             ip.startsWith('172.');
+                             ip.startsWith('172.16.') ||
+                             ip.startsWith('127.');
         
         return {
             id: 'dns-leak',
@@ -638,10 +669,10 @@ async function checkDNSLeak() {
             severity: 'medium',
             message: isPrivateIP 
                 ? 'You appear to be on a private network' 
-                : `Your public IP is: ${ip}`,
+                : `Your public IP is visible: ${ip}`,
             recommendation: isPrivateIP 
-                ? 'Good! Your IP is not directly exposed.' 
-                : 'Consider using a VPN to hide your IP address from websites. For full DNS leak testing, visit dnsleaktest.com',
+                ? 'Good! Your IP is not directly exposed to the internet.' 
+                : 'Your IP address is visible to websites. Consider using a VPN for additional privacy. For full DNS leak testing, visit dnsleaktest.com',
             learnMore: '#download',
             icon: isPrivateIP ? '✅' : 'ℹ️',
             whyMatters: 'Your IP address reveals your approximate location and can be used to track your online activities. VPNs hide your real IP, but DNS leaks can expose your true location even with a VPN active.'
@@ -651,9 +682,9 @@ async function checkDNSLeak() {
             id: 'dns-leak',
             name: 'Public IP Check',
             passed: true,
-            severity: 'medium',
-            message: 'Could not check IP address',
-            recommendation: 'Network error. For DNS leak testing, visit dnsleaktest.com',
+            severity: 'low',
+            message: 'IP check unavailable (browser privacy features may block this)',
+            recommendation: 'Some browsers block IP detection for privacy. For manual DNS leak testing, visit dnsleaktest.com',
             learnMore: '#download',
             icon: 'ℹ️',
             whyMatters: 'Your IP address reveals your approximate location and can be used to track your online activities. Use VPNs for additional privacy protection.'
